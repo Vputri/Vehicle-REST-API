@@ -1,4 +1,3 @@
-from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import Price_ListSerializer, UserSerializer
@@ -10,6 +9,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import GenericAPIView
 from .pagination import CustomPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
+from django.shortcuts import render
+
+def home(request):
+	return render(request, 'index.html')
 
 class Price_ListView(GenericAPIView):
 	authentication_classes = (TokenAuthentication,)

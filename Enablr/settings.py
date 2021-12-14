@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-%hkmytgm=8g=@o&(7pq3qmi6nxu4bigg-h&me&w$l)-ufag4b^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vehicle-rest-api.herokuapp.com']
+ALLOWED_HOSTS = ['vehicle-rest-api.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -71,7 +72,7 @@ ROOT_URLCONF = 'Enablr.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
