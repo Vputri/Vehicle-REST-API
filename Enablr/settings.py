@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%hkmytgm=8g=@o&(7pq3qmi6nxu4bigg-h&me&w$l)-ufag4b^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vehicle-rest-api.herokuapp.com']
 
 
 # Application definition
