@@ -11,6 +11,9 @@ from .pagination import CustomPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django.shortcuts import render
 
+def home(request):
+	return render(request, 'index.html')
+
 class Vechicle_BrandView(GenericAPIView):
 	authentication_classes = (TokenAuthentication,)
 	permission_classes = (IsAuthenticated,)
