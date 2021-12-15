@@ -19,14 +19,15 @@ class Vechicle_BrandSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class Vechicle_TypeSerializer(serializers.ModelSerializer):
-    id_brand = Vechicle_BrandSerializer()
+    id_brand = serializers.PrimaryKeyRelatedField(read_only=True)
     
     class Meta:
         model = Vechicle_Type
         fields = ['id','name', 'id_brand', 'created_at', 'updated_at']
 
 class Vechicle_ModelSerializer(serializers.ModelSerializer):
-    id_type = Vechicle_TypeSerializer()
+    id_type = serializers.PrimaryKeyRelatedField(read_only=True)
+    
     class Meta:
         model = Vechicle_Model
         fields = ['id','name', 'id_type', 'created_at', 'updated_at']
@@ -37,8 +38,8 @@ class Vechicle_YearSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class Price_ListSerializer(serializers.ModelSerializer):
-    id_model = Vechicle_ModelSerializer()
-    id_year = Vechicle_YearSerializer()
+    id_model = serializers.PrimaryKeyRelatedField(read_only=True)
+    id_year = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Price_List
