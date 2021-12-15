@@ -1,1 +1,1 @@
-web: gunicorn Enablr.wsgi --log-file - --log-level debug --preload --workers 1
+web: gunicorn project.wsgi --log-file -
